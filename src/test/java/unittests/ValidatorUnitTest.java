@@ -136,8 +136,15 @@ public class ValidatorUnitTest {
         //compare to console output with some iD doctoring (id different each time)
         String noIdString = originalOutput.toString().replaceAll(regex, "myid").replaceAll("\\n", "");
         Assert.assertEquals(validStr, noIdString);
-
     }
 
+    @Test
+    public void testI18(){
+        String language = "es";
+        String returnedStr = "";
+        Locale locale = new Locale(language);
+        ResourceBundle resource = ResourceBundle.getBundle("i18N", locale);
+        Assert.assertEquals(resource.getString("true"), "verdad");
+    }
 
 }
