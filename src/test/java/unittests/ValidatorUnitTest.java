@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import tinsley.service.ValidationService;
-import java.util.regex.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Locale;
@@ -113,7 +112,6 @@ public class ValidatorUnitTest {
     public void testDisplay(){
         String validSeq = "aabbaa1";
         String language = "en";
-        String returnedStr = "";
         Locale locale = new Locale(language);
         ResourceBundle resource = ResourceBundle.getBundle("i18N", locale);
         String regex = "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}";
@@ -141,7 +139,6 @@ public class ValidatorUnitTest {
     @Test
     public void testI18(){
         String language = "es";
-        String returnedStr = "";
         Locale locale = new Locale(language);
         ResourceBundle resource = ResourceBundle.getBundle("i18N", locale);
         Assert.assertEquals(resource.getString("true"), "verdad");
